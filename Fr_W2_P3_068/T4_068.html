@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplikasi Penghitung Klik - T4_068</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+      }
+      .card {
+        text-align: center;
+        padding: 30px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        transition: background-color 0.2s;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      p {
+        font-size: 20px;
+        margin-top: 20px;
+        color: #333;
+      }
+      #jumlahKlik {
+        font-weight: bold;
+        color: #007bff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h2>Penghitung Jumlah Klik</h2>
+      <button onclick="hitungKlik()">Klik Saya!</button>
+      <p>Total Klik: <span id="jumlahKlik">0</span></p>
+    </div>
+
+    <script>
+      // Variabel untuk menyimpan jumlah klik
+      let counter = 0;
+
+      // Fungsi yang dipanggil setiap kali tombol diklik
+      function hitungKlik() {
+        counter++; // Tambahkan jumlah klik sebanyak 1
+        document.getElementById("jumlahKlik").textContent = counter; // Tampilkan di HTML
+      }
+    </script>
+  </body>
+</html>

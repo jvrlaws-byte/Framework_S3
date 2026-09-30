@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengubah Warna Latar Belakang - T5_068</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        transition: background-color 0.4s ease; /* Transisi warna yang halus */
+      }
+      .card {
+        text-align: center;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      button {
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        transition: background-color 0.2s;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      p {
+        font-size: 18px;
+        margin-top: 20px;
+        color: #333;
+      }
+      #kodeWarna {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h2>Pengubah Warna Latar Belakang</h2>
+      <button onclick="ubahWarnaLatar()">Ubah Warna Latar</button>
+      <p>Warna saat ini: <span id="kodeWarna">#FFFFFF</span></p>
+    </div>
+
+    <script>
+      // Fungsi untuk mengubah warna latar belakang
+      function ubahWarnaLatar() {
+        // Menghasilkan nilai Hex acak (contoh: #3A82F1)
+        const warnaAcak =
+          "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0").toUpperCase();
+
+        // Mengubah background-color dari elemen <body>
+        document.body.style.backgroundColor = warnaAcak;
+
+        // Menampilkan teks kode warna di dalam layar
+        document.getElementById("kodeWarna").textContent = warnaAcak;
+      }
+    </script>
+  </body>
+</html>
