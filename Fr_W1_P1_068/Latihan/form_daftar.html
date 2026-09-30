@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran - Ekskul Kampus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Navigasi Tema Cerah -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Latihan - Javier 0920250068</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="data_anggota.html">Data Anggota</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="form_daftar.html">Pendaftaran</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Konten Form -->
+    <div class="container mt-5 mb-5">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-gradient text-dark rounded-top-4">
+                <h4 class="mb-0 fw-bold">📝 Formulir Pendaftaran Ekstrakurikuler</h4>
+            </div>
+            <div class="card-body p-4">
+                <form action="#" method="POST">
+                    
+                    <!-- 1. Textbox -->
+                    <div class="mb-3">
+                        <label for="nama" class="form-label fw-semibold">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="nama" placeholder="Masukkan nama lengkap Anda" required>
+                    </div>
+
+                    <!-- 2. Dropdown List -->
+                    <div class="mb-3">
+                        <label for="prodi" class="form-label fw-semibold">Program Studi</label>
+                        <select class="form-select" id="prodi">
+                            <option selected disabled>Pilih Program Studi...</option>
+                            <option value="ti">Teknik Informatika</option>
+                            <option value="si">Sistem Informasi</option>
+                            <option value="mi">Manajemen Informatika</option>
+                        </select>
+                    </div>
+
+                    <!-- 3. Radio Button (Ditambah border-secondary agar terlihat) -->
+                    <div class="mb-3 border p-3 rounded bg-white">
+                        <label class="form-label fw-semibold">Jenis Kelamin</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input border border-secondary" type="radio" name="jenis_kelamin" id="pria" value="pria">
+                            <label class="form-check-label" for="pria">Laki-laki</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input border border-secondary" type="radio" name="jenis_kelamin" id="wanita" value="wanita">
+                            <label class="form-check-label" for="wanita">Perempuan</label>
+                        </div>
+                    </div>
+
+                    <!-- 4. Checkbox (Ditambah border-secondary agar terlihat) -->
+                    <div class="mb-3 border p-3 rounded bg-white">
+                        <label class="form-label fw-semibold">Pilihan Ekstrakurikuler (Boleh lebih dari 1)</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input border border-secondary" type="checkbox" id="eks1" value="robotika">
+                            <label class="form-check-label" for="eks1">Robotika</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input border border-secondary" type="checkbox" id="eks2" value="desain">
+                            <label class="form-check-label" for="eks2">Desain Grafis</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input border border-secondary" type="checkbox" id="eks3" value="foto">
+                            <label class="form-check-label" for="eks3">Fotografi</label>
+                        </div>
+                    </div>
+
+                    <!-- 5. Text Area -->
+                    <div class="mb-4">
+                        <label for="alasan" class="form-label fw-semibold">Alasan Bergabung</label>
+                        <textarea class="form-control" id="alasan" rows="3" placeholder="Tuliskan alasan Anda ingin bergabung..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold shadow-sm">Kirim Pendaftaran</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
