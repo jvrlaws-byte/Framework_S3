@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konverter Suhu - T1_068</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8; /* Background abu-abu kebiruan yang sangat soft */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Shadow halus */
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background-color: #f9fafb;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #4f46e5; /* Warna border biru saat diklik */
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4f46e5; /* Biru modern */
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4338ca;
+        }
+
+        #hasil {
+            margin-top: 25px;
+            padding: 15px;
+            background: #eef2ff;
+            color: #3730a3;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            border: 1px dashed #a5b4fc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Konverter Suhu - T1_068</h2>
+
+        <label for="inputSuhu">Masukkan Nilai Suhu:</label>
+        <input type="number" id="inputSuhu" placeholder="Contoh: 100">
+
+        <label for="jenisKonversi">Pilih Jenis Konversi:</label>
+        <select id="jenisKonversi">
+            <option value="c-to-f">Celsius ke Fahrenheit</option>
+            <option value="c-to-r">Celsius ke Reamur</option>
+            <option value="f-to-c">Fahrenheit ke Celsius</option>
+            <option value="f-to-r">Fahrenheit ke Reamur</option>
+            <option value="r-to-c">Reamur ke Celsius</option>
+            <option value="r-to-f">Reamur ke Fahrenheit</option>
+        </select>
+
+        <button onclick="prosesKonversi()">Konversi Sekarang</button>
+
+        <div id="hasil">Hasil konversi akan muncul di sini.</div>
+    </div>
+
+    <script src="T1_068.js"></script>
+</body>
+
+</html>
