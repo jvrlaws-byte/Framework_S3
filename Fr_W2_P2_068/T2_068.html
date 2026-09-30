@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2_068 </title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .input-area { margin-bottom: 20px; }
+        input { padding: 5px; width: 60px; margin-right: 10px; }
+        button { padding: 6px 15px; cursor: pointer; }
+        #output { font-size: 18px; line-height: 2; font-family: monospace; }
+    </style>
+</head>
+
+<body>
+    <h2>Program T2_068</h2>
+    
+    <div class="input-area">
+        <label for="startInput">Mulai dari:</label>
+        <input type="number" id="startInput">
+        
+        <label for="endInput">Sampai:</label>
+        <input type="number" id="endInput">
+        
+        <button onclick="jalankanProgram()">Cetak Angka</button>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        function jalankanProgram() {
+            // 1. Mengambil nilai dari inputan user
+            const start = parseInt(document.getElementById("startInput").value);
+            const end = parseInt(document.getElementById("endInput").value);
+            const outputDiv = document.getElementById("output");
+
+            // 2. Validasi error jika inputnya ngaco
+            if (isNaN(start) || isNaN(end) || start > end) {
+                outputDiv.innerHTML = "<span style='color:red;'>Input tidak valid! Pastikan angka 'Mulai' lebih kecil atau sama dengan angka 'Sampai'.</span>";
+                return; // Hentikan program
+            }
+
+            let barisHasil = [];     // Untuk nampung semua baris yang sudah jadi
+            let barisSementara = []; // Untuk nampung 10 item dalam satu baris
+
+            // 3. Looping dimulai dari angka 'start' sampai 'end'
+            for (let i = start; i <= end; i++) {
+                
+                // Logika MI dan 2A
+                if (i % 15 === 0) {
+                    barisSementara.push("MI2A");
+                } else if (i % 3 === 0) {
+                    barisSementara.push("MI");
+                } else if (i % 5 === 0) {
+                    barisSementara.push("2A");
+                } else {
+                    barisSementara.push(i);
+                }
+
+                // 4. Logika untuk memecah baris setiap angka kelipatan 10 atau saat mencapai akhir
+                if (i % 15 === 0 || i === end) {
+                    // Gabungkan isi barisSementara dengan koma, lalu masukkan ke barisHasil
+                    barisHasil.push(barisSementara.join(", "));
+                    
+                    // Kosongkan kembali untuk dipakai di rentang angka 10 berikutnya
+                    barisSementara = []; 
+                }
+            }
+
+            // 5. Gabungkan semua baris dengan tag <br> (break line) agar turun ke bawah
+            outputDiv.innerHTML = barisHasil.join("<br>");
+        }
+    </script>
+    
+</body>
+</html>
